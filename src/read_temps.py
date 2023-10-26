@@ -57,7 +57,6 @@ def logic(window):
 
 def main_app():
     sG.theme("Dark")
-    print(sG.LOOK_AND_FEEL_TABLE.get("Dark"))
     gui = GUI()
     window = sG.Window(
         "temps",
