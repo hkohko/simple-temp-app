@@ -49,9 +49,9 @@ def logic(window):
         k10temp = k10temp[0]
         core = amdgpu[1]
 
-        window["-ACPITZ-"].update(acpi_data.current)
-        window["-K10TEMP-"].update(k10temp.current)
-        window["-CORE-"].update(core.current)
+        window["-ACPITZ-"].update(f"{int(acpi_data.current)}°C")
+        window["-K10TEMP-"].update(f"{int(k10temp.current)}°C")
+        window["-CORE-"].update(f"{int(core.current)}°C")
         sleep(1)
 
 
