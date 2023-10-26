@@ -14,16 +14,16 @@ def call_temp():
 class GUI:
     bg_color = "#404040"
     acpitz = [
-        sG.Text("acpitz: ", background_color=bg_color),
-        sG.Text("starting...", key="-ACPITZ-", background_color=bg_color),
+        sG.Text("acpitz:", background_color=bg_color),
+        sG.Text("", key="-ACPITZ-", background_color=bg_color),
     ]
     k10temp = [
-        sG.Text("k10temp: ", background_color=bg_color),
-        sG.Text("starting...", key="-K10TEMP-", background_color=bg_color),
+        sG.Text("k10temp:", background_color=bg_color),
+        sG.Text("", key="-K10TEMP-", background_color=bg_color),
     ]
     core = [
-        sG.Text("amdgpu: ", background_color=bg_color),
-        sG.Text("starting...", key="-CORE-", background_color=bg_color),
+        sG.Text("amdgpu:", background_color=bg_color),
+        sG.Text("", key="-CORE-", background_color=bg_color),
     ]
     start_stop = [
         sG.Button(
@@ -59,7 +59,16 @@ def main_app():
     sG.theme("Dark")
     print(sG.LOOK_AND_FEEL_TABLE.get("Dark"))
     gui = GUI()
-    window = sG.Window("temps", layout=gui.layout, finalize=True, size=(180, 120))
+    window = sG.Window(
+        "temps",
+        layout=gui.layout,
+        finalize=True,
+        text_justification="left",
+        margins=(5, 5),
+        element_padding=5,
+        size=(165, 130),
+        font="UbuntuMono 10 bold",
+    )
     while True:
         event, values = window.read()
         if event == sG.WIN_CLOSED:
